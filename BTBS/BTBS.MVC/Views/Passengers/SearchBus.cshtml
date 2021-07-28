@@ -1,0 +1,115 @@
+﻿@model IEnumerable<BTBS.MVC.Models.BusViewModel>
+@{
+    ViewBag.Title = "SearchBus";
+}
+
+<h2>Search Bus</h2>
+<br />
+@using (Html.BeginForm("SearchBus", "Passengers", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1">
+                <label class="control-label">From <span class="glyphicon glyphicon-map-marker"></span></label>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" placeholder="" class="form-control" name="from" />
+            </div>
+            <div class="col-lg-1">
+                <label class="control-label">To <span class="glyphicon glyphicon-map-marker"></span></label>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" placeholder="" class="form-control" name="to" />
+
+            </div>
+            <div class="col-lg-2">
+                <input type="submit" class="btn-primary" value="Search" />
+            </div>
+        </div>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Starting_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child_cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adult_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broarding_Point)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broarding_Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrival_At_Broarding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departure_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bus_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Starting_City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bus_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Child_cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adult_Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Broarding_Point)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Broarding_Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_At_Broarding)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                <a href="https://localhost:44374/Passengers/BookTicket" class="btn btn-primary btn-lg link-btn">Book Ticket</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BTBS.MVC.Models.AdminViewModel>
+
+@{
+    ViewBag.Title = "AllAdmins";
+}
+
+<h2>AllAdmins</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Mail Address
+        </th>
+        <th>
+            Contact
+        </th>
+        <th></th>
+    </tr>
+    @*<th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+    
+    
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Admin_Id)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone_No)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

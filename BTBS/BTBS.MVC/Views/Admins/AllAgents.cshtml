@@ -1,0 +1,72 @@
+﻿@model IEnumerable<BTBS.MVC.Models.AgentViewModel>
+
+@{
+    ViewBag.Title = "AllAgents";
+}
+
+<h2>All Agents</h2>
+
+<a href="https://localhost:44374/Admins/AddAgent" class="btn btn-primary btn-lg link-btn">Add Agent</a>
+<br />
+<br />
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Agent_Id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_No)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Agent_Id)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_No)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    <td>
+        <button type="button" class="btn-info" onclick="location.href = '@Url.Action("EditAgent","Admins",new {id=item.Agent_Id })'" @*name="id" value="id=@item.Agent_Id"*@ >
+            @*onclick="location.herf='@Url.Action("ODZCaseCreat","ODZ")'"*@
+            <span class="glyphicon glyphicon-edit" ></span>
+        </button> |
+        <button type="submit" class="btn-danger" onclick="location.href = '@Url.Action("DeleteAgent","Admins",new {id=item.Agent_Id })'">
+            <span class="glyphicon glyphicon-remove-sign"></span>
+        </button>
+    </td>
+    </tr>
+}
+
+</table>

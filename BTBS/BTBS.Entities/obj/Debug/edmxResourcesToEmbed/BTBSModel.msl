@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="BTBSEntities">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="masterModel.Booking">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="Booking_Id" ColumnName="Booking_Id" />
+          <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
+          <ScalarProperty Name="Route_No" ColumnName="Route_No" />
+          <ScalarProperty Name="Bus_No" ColumnName="Bus_No" />
+          <ScalarProperty Name="Passenger_Id" ColumnName="Passenger_Id" />
+          <ScalarProperty Name="Starting_City" ColumnName="Starting_City" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Date_Of_Travel" ColumnName="Date_Of_Travel" />
+          <ScalarProperty Name="Child_Cost" ColumnName="Child_Cost" />
+          <ScalarProperty Name="Adult_Cost" ColumnName="Adult_Cost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Seats_No" ColumnName="Seats_No" />
+          <ScalarProperty Name="Total_Cost" ColumnName="Total_Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Buses">
+      <EntityTypeMapping TypeName="masterModel.Bus">
+        <MappingFragment StoreEntitySet="Buses">
+          <ScalarProperty Name="Bus_No" ColumnName="Bus_No" />
+          <ScalarProperty Name="Starting_City" ColumnName="Starting_City" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Bus_type" ColumnName="Bus_type" />
+          <ScalarProperty Name="Child_cost" ColumnName="Child_cost" />
+          <ScalarProperty Name="Adult_Cost" ColumnName="Adult_Cost" />
+          <ScalarProperty Name="Broarding_Point" ColumnName="Broarding_Point" />
+          <ScalarProperty Name="Broarding_Duration" ColumnName="Broarding_Duration" />
+          <ScalarProperty Name="Arrival_At_Broarding" ColumnName="Arrival_At_Broarding" />
+          <ScalarProperty Name="Departure_Time" ColumnName="Departure_Time" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="masterModel.Route">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="Route_No" ColumnName="Route_No" />
+          <ScalarProperty Name="Route_Name" ColumnName="Route_Name" />
+          <ScalarProperty Name="Stops" ColumnName="Stops" />
+          <ScalarProperty Name="Stage_Cost" ColumnName="Stage_Cost" />
+          <ScalarProperty Name="Start_Stage" ColumnName="Start_Stage" />
+          <ScalarProperty Name="End_Stage" ColumnName="End_Stage" />
+          <ScalarProperty Name="Start_time" ColumnName="Start_time" />
+          <ScalarProperty Name="End_time" ColumnName="End_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="masterModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agents">
+      <EntityTypeMapping TypeName="masterModel.Agent">
+        <MappingFragment StoreEntitySet="Agents">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Agent_Id" ColumnName="Agent_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Passengers">
+      <EntityTypeMapping TypeName="masterModel.Passenger">
+        <MappingFragment StoreEntitySet="Passengers">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Passenger_Id" ColumnName="Passenger_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

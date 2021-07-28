@@ -1,0 +1,103 @@
+﻿@model IEnumerable<BTBS.MVC.Models.BusViewModel>
+
+@{
+    ViewBag.Title = "AllBuses";
+}
+
+<h2>All Buses</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<a href="https://localhost:44374/Admins/AddBus" class="btn btn-primary btn-lg link-btn">Add Bus</a>
+<br />
+<br />
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Bus_No)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Starting_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child_cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adult_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broarding_Point)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Broarding_Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrival_At_Broarding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departure_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Bus_No)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Starting_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bus_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Child_cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adult_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broarding_Point)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broarding_Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arrival_At_Broarding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departure_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            <!--@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |-->
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            <!--@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })-->
+            <button type="button" class="btn-info" onclick="location.href = '@Url.Action("EditBus","Admins",new {id=item.Bus_No })'" @*name="id" value="id=@item.Agent_Id"*@>
+                @*onclick="location.herf='@Url.Action("ODZCaseCreat","ODZ")'"*@
+                <span class="glyphicon glyphicon-edit"></span>
+            </button> |
+            <button type="submit" class="btn-danger" onclick="location.href = '@Url.Action("DeleteBus","Admins",new {id=item.Bus_No })'">
+                <span class="glyphicon glyphicon-remove-sign"></span>
+            </button>
+        </td>
+    </tr>
+}
+
+</table>

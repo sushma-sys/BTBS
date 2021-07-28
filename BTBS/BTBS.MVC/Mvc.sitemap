@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <mvcSiteMapNode title="Admin" controller="Admins" action="Index">
+    <mvcSiteMapNode title="Agents" controller="Admins" action="AllAgents">
+      <mvcSiteMapNode title="AddAgent" controller="Admins" action="AddAgent"/>
+      <mvcSiteMapNode title="EditAgent" controller="Admins" action="EditAgent" key="Agents"/>
+      <mvcSiteMapNode title="DeleteAgent" controller="Admins" action="DeleteAgent"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Buses" controller="Admins" action="AllBuses">
+      <mvcSiteMapNode title="AddBus" controller="Admins" action="AddBus"/>
+      <mvcSiteMapNode title="EditBus" controller="Admins" action="EditBus"/>
+      <mvcSiteMapNode title="DeleteBus" controller="Admins" action="DeleteBus"/>
+    </mvcSiteMapNode>
+      <mvcSiteMapNode  title="Routes" controller="Admins" action="AllRoutes">
+        <mvcSiteMapNode title="AddRoute" controller="Admins" action="AddRoute"/>
+        <mvcSiteMapNode title="EditRoute" controller="Admins" action="EditRoute"/>
+        <mvcSiteMapNode title="DeleteRoute" controller="Admins" action="DeleteRoute"/>
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Agent" controller="Agents" action="Index" >
+      <mvcSiteMapNode  title="AllPassengers" controller="Agents" action="AllPassengers">
+      </mvcSiteMapNode>
+      <mvcSiteMapNode  title="BookTicket" controller="Agents" action="BookTicket">
+      </mvcSiteMapNode>
+      <mvcSiteMapNode  title="AddPassenger" controller="Agents" action="AddPassenger">
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Passenger" controller="Passengers" action="Index">
+      <mvcSiteMapNode  title="BookTicket" controller="Passengers" action="BookTicket">
+      </mvcSiteMapNode>
+      <mvcSiteMapNode  title="SearchBus" controller="Passengers" action="SearchBus">
+      </mvcSiteMapNode>
+      <mvcSiteMapNode  title="ViewTickets" controller="Passengers" action="ViewTickets">
+      </mvcSiteMapNode>
+  </mvcSiteMapNode>
+  </mvcSiteMapNode>
+  
+</mvcSiteMap>

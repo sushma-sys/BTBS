@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="int" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Agents">
+    <Key>
+      <PropertyRef Name="Agent_Id" />
+    </Key>
+    <Property Name="Agent_Id" Type="int" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="Booking_Id" />
+    </Key>
+    <Property Name="Booking_Id" Type="int" Nullable="false" />
+    <Property Name="Booking_Date" Type="datetime" Nullable="false" />
+    <Property Name="Route_No" Type="int" />
+    <Property Name="Bus_No" Type="int" />
+    <Property Name="Passenger_Id" Type="int" />
+    <Property Name="Starting_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_Of_Travel" Type="datetime" Nullable="false" />
+    <Property Name="Child_Cost" Type="money" Nullable="false" />
+    <Property Name="Adult_Cost" Type="money" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seats_No" Type="int" Nullable="false" />
+    <Property Name="Total_Cost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Buses">
+    <Key>
+      <PropertyRef Name="Bus_No" />
+    </Key>
+    <Property Name="Bus_No" Type="int" Nullable="false" />
+    <Property Name="Starting_City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bus_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Child_cost" Type="money" Nullable="false" />
+    <Property Name="Adult_Cost" Type="money" Nullable="false" />
+    <Property Name="Broarding_Point" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Broarding_Duration" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Arrival_At_Broarding" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Departure_Time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Capacity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Passengers">
+    <Key>
+      <PropertyRef Name="Passenger_Id" />
+    </Key>
+    <Property Name="Passenger_Id" Type="int" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Routes">
+    <Key>
+      <PropertyRef Name="Route_No" />
+    </Key>
+    <Property Name="Route_No" Type="int" Nullable="false" />
+    <Property Name="Route_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stops" Type="int" Nullable="false" />
+    <Property Name="Stage_Cost" Type="money" Nullable="false" />
+    <Property Name="Start_Stage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="End_Stage" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Start_time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="End_time" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Bookings__Bus_No__090A5324">
+    <End Role="Buses" Type="Self.Buses" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buses">
+        <PropertyRef Name="Bus_No" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="Bus_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookings__Passen__09FE775D">
+    <End Role="Passengers" Type="Self.Passengers" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passengers">
+        <PropertyRef Name="Passenger_Id" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="Passenger_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookings__Route___08162EEB">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="Route_No" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="Route_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="masterModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Buses" EntityType="Self.Buses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Passengers" EntityType="Self.Passengers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Bookings__Bus_No__090A5324" Association="Self.FK__Bookings__Bus_No__090A5324">
+      <End Role="Buses" EntitySet="Buses" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookings__Passen__09FE775D" Association="Self.FK__Bookings__Passen__09FE775D">
+      <End Role="Passengers" EntitySet="Passengers" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookings__Route___08162EEB" Association="Self.FK__Bookings__Route___08162EEB">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

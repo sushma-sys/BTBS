@@ -1,0 +1,66 @@
+﻿@model BTBS.MVC.Models.AdminViewModel
+
+@{
+    ViewBag.Title = "AdminDetails";
+}
+
+<h2>AdminDetails</h2>
+
+<div>
+    <h4>AdminViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

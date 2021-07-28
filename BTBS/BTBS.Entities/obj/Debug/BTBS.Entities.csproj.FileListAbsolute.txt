@@ -1,0 +1,12 @@
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\BTBS.Entities.dll.config
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\BTBS.Entities.dll
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\BTBS.Entities.pdb
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\EntityFramework.dll
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\EntityFramework.xml
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\obj\Debug\BTBS.Entities.csproj.CoreCompileInputs.cache
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\obj\Debug\BTBS.Entities.csproj.CopyComplete
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\obj\Debug\BTBS.Entities.dll
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\obj\Debug\BTBS.Entities.pdb
+E:\BusTicketBookingSystem\BTBS\BTBS.Entities\obj\Debug\BTBS.Entities.csprojAssemblyReference.cache

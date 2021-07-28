@@ -1,0 +1,109 @@
+﻿@model IEnumerable<BTBS.MVC.Models.BookingViewModel>
+
+@{
+    ViewBag.Title = "ViewTickets";
+}
+
+<h2>ViewTickets</h2>
+
+@using (Html.BeginForm("ViewTickets", "Passengers", FormMethod.Get))
+{
+<span> Enter Passenger_Id :</span>
+    <input type="text" name="id" placeholder="" />
+    <input type="submit" value="search" name="submit" />
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Booking_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Booking_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Route_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bus_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Passenger_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Starting_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Of_Travel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Child_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adult_Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seats_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_Cost)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Route_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bus_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passenger_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Starting_City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Of_Travel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Child_Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adult_Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seats_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Cost)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+
+</table>
